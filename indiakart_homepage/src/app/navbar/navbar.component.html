@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" width="30" height="24"
+            class="d-inline-block align-text-top" alt="logo" class="logo">&nbsp;
+        <a class="navbar-brand" href="#">IndiaKart</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['products']" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/home/compare" href="#">Compare</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link active" href="#">Categories</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link active" [routerLink]="['cart']" href="#">Cart <span class="badge badge-info" style="color: rgb(195, 223, 60);">{{cartItems.length}}</span></a>
+                </li>
+            </ul>
+            <div *ngIf="response ;then login else elseBlock" ></div>
+            <ng-template #login><a class="nav-link active" routerLink="/home/user">Welcome {{response.firstname}}</a>&nbsp; &nbsp;<a href="#" class="btn btn-outline-danger" (click)="logout()">Logout</a></ng-template>
+            <ng-template #elseBlock><a class="nav-link active" routerLink="/login">Login/Signup</a></ng-template>
+
+        </div>
+    </div>
+</nav>
+
+<!-- <nav class="navbar navbar-light ml-4 mr-4">
+    <form class="container-fluid">
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">Search <i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                aria-describedby="basic-addon1">
+        </div>
+    </form>
+</nav> -->
+
+
+
