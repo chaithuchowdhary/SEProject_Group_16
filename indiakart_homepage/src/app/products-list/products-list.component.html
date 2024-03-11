@@ -1,0 +1,179 @@
+<!-- <div class="container">
+  <div class="d-flex" >
+
+    <div class="card m-4 d-flex align-items-stretch" style="width: 18rem;" *ngFor="let prod of products">
+        <a href="" class="mytext" [routerLink]="[prod.id]">
+        <img class="card-img-top" src="{{prod.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{prod.name}}</h5>
+            <p class="card-text">{{prod.description}}</p>
+
+
+        </div>
+      </a>
+        <button class="btn btn-primary btn-block m-3" (click)="addCart(prod)">Add to cart</button>
+
+    </div>
+
+</div>
+
+</div> -->
+
+
+
+<div class="container mb-4">
+    <div class="row">
+
+
+
+
+
+    </div>
+
+    <!-- Category Search -->
+    <div class="row">
+        <div class="col container">
+
+
+            <div class="input-group mb-4">
+                <span class="input-group-text" id="basic-addon1">Search <i
+                        class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                    [(ngModel)]="searchTerm">
+            </div>
+
+
+            <form #catform="ngForm" class="col" novalidate (ngSubmit)="onSubmit(catform.value)">
+                <div class="dropdown ">
+                    <div class="row">
+                        <div class="col-1">
+                            <h6>Category</h6>
+                        </div>
+                        <div class="col-2">
+                            <select #catname="ngModel" name="catname" placeholder="Enter" class=""
+                                aria-label="Default select example" ngModel>
+                                <option value="0">Show all</option>
+                                <option *ngFor="let cat of CategoryList" value={{cat.id}}>{{cat.name}}</option>
+                            </select>
+
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="custombtn mb-2">Filter</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="row mx-auto">
+
+
+        <!-- search query window -->
+        <div class="col-md-3 mt-3" style="background-color: rgb(221, 218, 218); border-radius: 10px; ">
+            <div class="m-2">
+                <h4>Sort</h4>
+                <div class="row">
+                    <div class="col">
+                        <h3><button type="button" class="btn btn-primary" (click)="onNameSort()">Name</button></h3>
+                    </div>
+                    <div class="col">
+                        <h3><button type="button" class="btn btn-primary" (click)="onPriceSort()">Price</button></h3>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+
+
+
+
+                <div class="row" style=" margin-top: 10px; color: rgb(29, 25, 25);">
+                    <div class="col">
+                        <h4>Filter Products</h4>
+                    </div>
+
+                </div>
+
+                <form class="form-group" #filterform="ngForm" novalidate (ngSubmit)="onfilter(filterform.value)">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col">
+                                <label for="brand">Brand:</label>
+                            </div>
+                            <div class="col">
+                                <input #brand="ngModel" type="text" class="form-control" name="brand"
+                                    placeholder="Enter Brand" ngModel>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col">
+                                <label for="priceRange">Price:</label>
+                            </div>
+                            <div class="form-group">
+                                <input #p1="ngModel" class="form-control" type="text" name="p1" ngModel>
+                            </div>
+                            <div>to</div>
+                            <div class="form-group">
+                                <input #p2="ngModel" class="form-control" type="text" name="p2" ngModel>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                        <div class="col m">
+                            <button type="button" (click)="resetList()" class="btn btn-primary">Reset Filters</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="row">
+                <div class="d-flex">
+
+                    <div class="card m-4 d-flex align-items-stretch" style="width: 18rem;"
+                        *ngFor="let prod of Prods | filter:searchTerm">
+                        <a href="" class="mytext" [routerLink]="[prod.productId]">
+                            <img class="card-img-top" src="{{prod.image}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{prod.name}}</h5>
+                                <p class="card-text">Price : <strong> ₹ {{prod.price}}</strong></p>
+                                <p class="card-text">Brand : <strong>{{prod.brand}}</strong></p>
+
+
+                            </div>
+                        </a>
+                        <button class="btn btn-primary btn-block m-3" (click)="addCart(prod)">Add to cart</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</div>
+{{searchTerm | json}}

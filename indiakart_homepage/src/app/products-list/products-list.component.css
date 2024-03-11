@@ -1,0 +1,18 @@
+.mytext{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .center{
+    display:block;
+    margin:auto;
+  }
+  
+  .custombtn{
+  
+  color: white;
+    background-color: rgb(13,110,253);
+    border-radius: 5px;
+    border-color: rgb(13,110,253);
+  }
+  

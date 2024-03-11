@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Product } from '../Models/Product';
+// import { Product } from '../Models/Product';
 // import { OnlineShoppingService } from '../services/ProductCategory/productcat.service';
 import { ShoppingService } from '../shopping.service';
 
@@ -11,7 +11,7 @@ import { ShoppingService } from '../shopping.service';
 })
 export class CarouselComponent implements OnInit {
 
-  products: Product[] = <Array<Product>>[];
+  // products: Product[] = <Array<Product>>[];
   public response: any = JSON.parse(localStorage.getItem("user") || "null");
 
   // constructor(private _services: ShoppingService, private _prodCatService: OnlineShoppingService, private _router: Router, private activatedRouter: ActivatedRoute) { }
@@ -33,11 +33,11 @@ export class CarouselComponent implements OnInit {
     description:"LG offers a wide range of products"},
   ]
   ngOnInit(): void {
-    this._services.getProducts().subscribe(data => {
-      this.products = data
-      this.products = this.products.splice(0, 5);
-      console.log(this.products);
-    });
+    // this._services.getProducts().subscribe(data => {
+    //   this.products = data
+    //   this.products = this.products.splice(0, 5);
+    //   console.log(this.products);
+    // });
   }
 
 }

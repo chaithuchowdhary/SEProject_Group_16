@@ -7,6 +7,11 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductsListComponent } from './products-list/products-list.component';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +19,16 @@ import { CarouselComponent } from './carousel/carousel.component';
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

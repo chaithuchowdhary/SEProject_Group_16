@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import { CartPageComponent } from './cart-page/cart-page.component';
 // import { ProductPageComponent } from './product-page/product-page.component';
-// import { ProductsListComponent } from './products-list/products-list.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 // import { LoginComponent } from './login/login.component';
 
 // import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
@@ -34,8 +34,8 @@ const routes: Routes = [
     path: 'home', component: HomeComponent,
     children: [
       { path: 'homepage', component: CarouselComponent },
-  //     { path: "products", component: ProductsListComponent },
-  //     { path: "products/:id", component: ProductPageComponent },
+      { path: "products", component: ProductsListComponent },
+      // { path: "products/:id", component: ProductPageComponent },
   //     { path: "cart", component: CartPageComponent },
   //     { path: "checkout", component: CheckoutComponent },
   //     { path: 'orderplaced', component: OrderPlacedComponent },
