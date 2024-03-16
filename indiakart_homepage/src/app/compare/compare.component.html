@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <p class="text-center">Select products to compare</p>
+        <div class="col-sm-4 mx-auto">
+            <select class="form-control" [(ngModel)]="selectedProduct1" (change)="OnSelected(selectedProduct1)">
+
+                <option *ngFor="let prod of products; let i = index" [value]="i" selected>{{prod.name}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4 mx-auto">
+            <select class="form-control" [(ngModel)]="selectedProduct2" (change)="OnSelected2(selectedProduct2)"
+                aria-label="Default select example">
+
+                <option *ngFor="let prod of products; let i = index" [value]="i" selected>{{prod.name}}</option>
+            </select>
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-6">
+          <div *ngIf="product1.id != null">
+            <div class="card d-flex justify-container-center">
+              <img [src]="product1.image" class="w-50  mx-auto m-4">
+              <div class="card h-200">
+                  <div class="card-body">{{product1.description}}</div>
+              </div>
+              <p class="text-center">Price : {{product1.price}}</p>
+          </div>
+          </div>
+          <div *ngIf="product1.id == null">
+          <div class="card">
+            <div class="card-body">
+                <p class="text-center">No product selected</p>
+            </div>
+        </div>
+      </div>
+
+        </div>
+
+
+
+        <div class="col-6">
+            <div *ngIf="product2.id!=null ;then p2 else text"></div>
+            <ng-template #p2>
+                <div class="card">
+                    <img [src]="product2.image" class="w-50 mx-auto m-4">
+                    <div class="card h-200">
+                        <div class="card-body">{{product2.description}}</div>
+                    </div>
+                    <p class="text-center">Price : {{product2.price}}</p>
+                </div>
+            </ng-template>
+            <ng-template #text>
+                <div class="card">
+                    <div class="card-body">
+                        <p class="text-center">No product selected</p>
+                    </div>
+                </div>
+            </ng-template>
+
+        </div>
+    </div>
+</div>
+

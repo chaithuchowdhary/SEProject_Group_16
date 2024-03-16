@@ -11,6 +11,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CompareComponent } from './compare/compare.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FooterComponent,
     NavbarComponent,
     CarouselComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
