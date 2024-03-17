@@ -1,17 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using IndiaKart.Models;
 
-namespace IndiaKart_Backend
+namespace IndiaKart
 {
     public class Startup
     {
@@ -26,17 +21,47 @@ namespace IndiaKart_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<ShoppingContext>(item => item.UseSqlServer(Configuration.GetConnectionString("MyConStr")));
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder
+                        .WithOrigins(Configuration.GetSection("AllowedOrigins").Get<string[]>())
+                        //  .WithHeaders("Authorization")
+                        .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .AllowAnyHeader();
+                });
+
+                options.AddPolicy("SpecificOrigin", builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                        .WithHeaders("Authorization");
+                });
+            });
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors(options =>
+               options.WithOrigins("http://localhost:4200")
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+            app.UseCors();
 
             app.UseRouting();
 

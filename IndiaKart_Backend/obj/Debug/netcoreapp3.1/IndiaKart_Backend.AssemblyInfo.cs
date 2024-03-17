@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IndiaKart_Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37f93cb68732a3bc0138e29a04de6ad225b1ef47")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+de4a4343a724a0a0cc4292d3f2b4a6fc3b7ff416")]
 [assembly: System.Reflection.AssemblyProductAttribute("IndiaKart_Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IndiaKart_Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
