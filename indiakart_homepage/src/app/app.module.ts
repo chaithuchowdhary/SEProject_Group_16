@@ -12,6 +12,7 @@ import { ProductsListComponent } from './products-list/products-list.component';
 import { FormsModule } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CompareComponent } from './compare/compare.component';
+import { TopproductsComponent } from './topproducts/topproducts.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CompareComponent } from './compare/compare.component';
     NavbarComponent,
     CarouselComponent,
     ProductsListComponent,
-    CompareComponent
+    CompareComponent,
+    TopproductsComponent
   ],
   imports: [
     BrowserModule,
