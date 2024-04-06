@@ -6,6 +6,8 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { CompareComponent } from './compare/compare.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -22,6 +24,8 @@ const routes: Routes = [
       { path: "cart", component: CartPageComponent },
     ]
   },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent }
 ];
 
 

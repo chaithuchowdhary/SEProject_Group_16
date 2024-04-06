@@ -15,6 +15,8 @@ import { CompareComponent } from './compare/compare.component';
 import { TopproductsComponent } from './topproducts/topproducts.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { ProductsPageComponent } from './products-page/products-page.component';
     CompareComponent,
     TopproductsComponent,
     CartPageComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
