@@ -1,0 +1,141 @@
+<div class = "container px-4">
+
+
+    <div class="row mt-4 gx-5">
+    <div class="col-7 mt-4 shadow-lg p-3 mb-8 bg-white rounded">
+      <h3 class="">Cart</h3>
+      <div *ngIf="cartItems.length == 0">
+        <br>
+        <br>
+        <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" class="notfoundimg center" alt="">
+        <h5 class="mx-auto text-center m-3" >Empty Cart</h5>
+        <button [routerLink]="['/products']" class="btn btn-outline-success center">Check Products</button>
+      </div>
+      <div class="row mt-3" *ngIf="cartItems.length != 0">
+  
+        <div class="col-1">
+          <strong>Sr No</strong>
+        </div>
+        <div class="col">
+          <strong>Image</strong>
+        </div>
+        <div class="col">
+          <strong>
+            Product
+          </strong>
+  
+  
+        </div>
+        <div class="col">
+          <strong>
+            Quantity
+          </strong>
+        </div>
+        <div class="col">
+          <strong>
+            Price
+          </strong>
+        </div>
+        <!-- <div class="col">
+          <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-white btn-minuse" type="button" (click)="decrease(i)">-</button>
+            </span>
+            <div class="m-2">{{item.quantity}}</div>
+            <span class="input-group-btn">
+                <button class="btn btn-red btn-pluss" type="button" (click)="increase(i)">+</button>
+            </span>
+          </div>
+        </div> -->
+        <div class="col">
+          <strong class="" >
+            Actions
+          </strong>
+        </div>
+      </div>
+      <div class="row mt-3" *ngFor="let item of cartItems; let i=index">
+  
+        <div class="col-1">
+          <strong class="center mt-3">{{i+1}}</strong>
+        </div>
+          <div class="col ">
+            <img src={{item.image}} class=" w-50">
+          </div>
+          <div class="col mt-3">
+            <p>
+              {{item.name}}
+            </p>
+          </div>
+          <div class="col ">
+            <p class="mx-3 mt-3">
+              {{item.quantity}}
+            </p>
+          </div>
+          <div class="col mt-3">
+            <p>
+              ₹ {{item.cost}}
+            </p>
+          </div>
+          <!-- <div class="col">
+            <div class="input-group">
+              <span class="input-group-btn">
+                  <button class="btn btn-white btn-minuse" type="button" (click)="decrease(i)">-</button>
+              </span>
+              <div class="m-2">{{item.quantity}}</div>
+              <span class="input-group-btn">
+                  <button class="btn btn-red btn-pluss" type="button" (click)="increase(i)">+</button>
+              </span>
+            </div>
+          </div> -->
+          <div class="col">
+            <button class="btn btn-outline-danger mx-2 mt-2" (click)="deleteItem(item.id, item.name)"><i class="fa fa-trash"></i></button>
+          </div>
+        </div>
+    </div>
+    <div class="col-4 mt-4 shadow-lg p-3 mb-8 bg-white rounded ml-4 mx-auto" >
+      <div class="row shadow-none p-3 mb-5 bg-light rounded">
+        <h4 class="text-center">Price Details</h4>
+      </div>
+      <div class="row text-center">
+        <div class="col"><p>Subtotal : </p></div>
+        <div class="col"><p> ₹ {{subTotal(0)}} </p></div>
+      </div>
+      <div class="row text-center">
+        <div class="col"><p> Delivery : </p></div>
+        <div class="col">
+          <div *ngIf="cartItems.length == 0; else forty">
+            <p>₹ 0 </p>
+        </div>
+        <ng-template #forty>
+            <p> ₹ 49</p>
+        </ng-template>
+          </div>
+      </div>
+      <div class="row text-center">
+        <div class="col"><p> GST : </p></div>
+        <div class="col"><p> ₹ {{totalGst(0)}} </p></div>
+      </div>
+      <div class="row text-center">
+        <div class="col"><h5> Order Total : </h5></div>
+        <div class="col"><h5><div *ngIf="cartItems.length == 0; else total">
+          <p> ₹ 0</p>
+      </div>
+      <ng-template #total>
+        ₹ {{Total(0)}}
+      </ng-template></h5></div>
+      </div>
+  
+      <div class="row mt-4 text-center mx-auto" *ngIf="subTotal(0) != 0">
+        <button class="btn btn-primary" [routerLink]="['/home/checkout']">Proceed to buy</button>
+      </div>
+      <div class="row mt-4 text-center mx-auto" *ngIf="subTotal(0) == 0">
+        <button class="btn btn-primary disabled" [routerLink]="['/home/checkout']">Proceed to buy</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
