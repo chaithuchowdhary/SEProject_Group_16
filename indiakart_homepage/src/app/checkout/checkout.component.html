@@ -1,0 +1,491 @@
+<style>
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 250px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+
+
+
+
+    .custom-control {
+        border-radius: 6px;
+        border: #afafafc4 solid 1px;
+        padding: 10px 0px 10px 40px;
+    }
+
+    .my-link {
+        color: black;
+    }
+
+    .my-link:hover {
+        color: #a3004c;
+    }
+</style>
+
+<div class="container margin-top">
+
+
+
+    <div class="row mx-auto">
+        <!--Grid column-->
+        <div class="col-md-7 mb-4">
+            <!--Card-->
+            <div class="box-element" id="form-wrapper">
+
+                <!--Card content-->
+
+                <h4>Shipping Info:</h4>
+                <hr>
+                <div *ngIf="addresses.length == 0">
+                    <strong>
+                        <p class="text-center">No saved address</p>
+                    </strong>
+                </div>
+                <div class="form-check" *ngFor="let address of addresses">
+
+                    <div class="row">
+                        <div class="col-8">
+                            <input [(ngModel)]="selectedAddress" class="form-check-input mt-2" type="radio"
+                                name="flexRadioDefault" value="{{address.address}}" id="flexRadioDefault1">
+
+                            <label class="form-check-label mt-1" for="flexRadioDefault1">
+                                {{address.address}}
+                            </label>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-outline-danger" (click)="removeAddress(address.addressId)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <hr>
+
+
+
+
+
+
+
+
+
+                <div class="card ">
+                    <div class="card-header" id="headingOne">
+                        <div class="row">
+                            <div class="col-11">
+                                Add Address
+                            </div>
+                            <div class="col">
+                                <button (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+                                    aria-controls="collapseExample">
+                                    <div *ngIf="isCollapsed">
+                                        <i class="fa fa-angle-down">
+                                        </i>
+                                    </div>
+                                    <div *ngIf="!isCollapsed">
+                                        <i class="fa fa-angle-up">
+                                        </i>
+                                    </div>
+
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+                        <div class="card-body ">
+                            <form #data="ngForm" action="" method="POST" class="" (submit)="addAddress(data)">
+
+                                <!--Grid row-->
+                                <!--address-->
+                                <div class="mb-1">
+                                    <label for="address" class="">Address</label>
+                                    <input value="" type="text" #address="ngModel" name="addLine" id="address"
+                                        class="form-control" ngModel placeholder="" required minlength="4">
+                                    <br>
+                                    <div *ngIf="address.invalid && address.touched" class="alert alert-danger">
+                                        <p *ngIf="address.hasError('required')">Address is required</p>
+                                        <p *ngIf="address.hasError('minlength')">Address too short.</p>
+                                    </div>
+                                </div>
+                                <!--Grid row-->
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 ">
+
+                                        <label for="city">City</label>
+                                        <input value="" #city="ngModel" type="text" name="city" class="form-control"
+                                            id="city" placeholder="" ngModel required>
+                                        <br />
+                                        <div *ngIf="city.invalid && city.touched" class="alert alert-danger">
+
+                                            <p *ngIf="city.hasError('required')">City is required</p>
+
+
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <div class="col-lg-4 col-md-12 mb-3">
+                                        <label for="states">State</label>
+                                        <select class="custom-select d-block w-100 form-control" id="states"
+                                            #state="ngModel" name="state" ngModel required>
+                                            <option value="">Choose...</option>
+                                            <option>Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>Arizona</option>
+                                            <option>Arkansas</option>
+                                            <option>California</option>
+                                            <option>Colorado</option>
+                                            <option>Connecticut</option>
+                                            <option>Delaware</option>
+                                            <option>Florida</option>
+                                            <option>Georgia</option>
+                                            <option>Hawaii</option>
+                                            <option>Idaho</option>
+                                            <option>Illinois</option>
+                                            <option>Indiana</option>
+                                            <option>Iowa</option>
+                                            <option>Kansas</option>
+                                            <option>Kentucky</option>
+                                            <option>Louisiana</option>
+                                            <option>Maine</option>
+                                            <option>Maryland</option>
+                                            <option>Massachusetts</option>
+                                            <option>Michigan</option>
+                                            <option>Minnesota</option>
+                                            <option>Mississippi</option>
+                                            <option>Missouri</option>
+                                            <option>Montana</option>
+                                            <option>Nebraska</option>
+                                            <option>Nevada</option>
+                                            <option>New Hampshire</option>
+                                            <option>New Jersey</option>
+                                            <option>New Mexico</option>
+                                            <option>New York</option>
+                                            <option>North Carolina</option>
+                                            <option>North Dakota</option>
+                                            <option>Ohio</option>
+                                            <option>Oklahoma</option>
+                                            <option>Oregon</option>
+                                            <option>Pennsylvania</option>
+                                            <option>Rhode Island</option>
+                                            <option>South Carolina</option>
+                                            <option>South Dakota</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Utah</option>
+                                            <option>Vermont</option>
+                                            <option>Virginia</option>
+                                            <option>Washington</option>
+                                            <option>West Virginia</option>
+                                            <option>Wisconsin</option>
+                                            <option>Wyoming</option>
+                                        </select>
+                                        <br />
+                                        <div *ngIf="state.invalid && state.touched" class="alert alert-danger">
+                                            <p *ngIf="state.hasError('required')">State is required</p>
+                                        </div>
+                                    </div>
+                                    <!--Grid column-->
+                                    <!--Grid column-->
+                                    <div class="col-lg-4 col-md-6 mb-3">
+
+                                        <label for="zip">Zip</label>
+                                        <input value="" type="text" #zipcode="ngModel" name="zipcode" ngModel
+                                            class="form-control" id="zip" placeholder="" required>
+                                        <br />
+                                        <div *ngIf="zipcode.invalid && zipcode.touched" class="alert alert-danger">
+
+                                            <p *ngIf="zipcode.hasError('required')">Zip is required</p>
+
+
+                                        </div>
+
+                                    </div>
+                                    <!--Grid column-->
+
+                                </div>
+
+                                <button class="btn btn-success btn-block text-uppercase" type="submit">Save</button>
+
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <h4>Card Info:</h4>
+                <hr>
+                <div *ngIf="cards.length == 0">
+                    <strong>
+                        <p class="text-center">No saved payment method</p>
+                    </strong>
+                </div>
+                <div class="form-check" *ngFor="let card of cards">
+
+                    <div class="row">
+
+                        <div class="col-8">
+                            <form action="" #cardUsed="ngForm">
+                                <input [(ngModel)]="selectedCard" class="form-check-input mt-2" type="radio"
+                                    name="flexRadioDefault" value="{{card.cardNumber}}" id="flexRadioDefault1">
+
+                                <label class="form-check-label mt-1" for="flexRadioDefault1">
+                                    {{card.cardNumber}}
+                                </label>
+
+                                <div class="mt-3" *ngIf="selectedCard == card.cardNumber">
+                                    <label for="cvv2" class="mx-4">CVV: </label>
+                                    <input type="text" class="col-2" minlength="3" maxlength="4" #cvv2="ngModel"
+                                        name="cvv2" required [(ngModel)]="enteredcvv">
+                                    <div *ngIf="cvv2.invalid && selectedCard == card.cardNumber"
+                                        class="alert alert-danger cvv mt-2">
+                                        <p *ngIf="cvv2.hasError('required')">CVV is required</p>
+                                        <p *ngIf="cvv2.hasError('minlength')">Enter correct cvv</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col">
+                            <button class="btn btn-outline-danger" (click)="removeCard(card.id)"><i
+                                    class="fa fa-trash"></i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <hr>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-11">
+                                Add Card
+                            </div>
+                            <div class="col">
+                                <button (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsedCard"
+                                    aria-controls="collapseExample">
+                                    <div *ngIf="isCollapsedCard">
+                                        <i class="fa fa-angle-down">
+                                        </i>
+                                    </div>
+                                    <div *ngIf="!isCollapsedCard">
+                                        <i class="fa fa-angle-up">
+                                        </i>
+                                    </div>
+
+                                </button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsedCard">
+                        <div class="card-body">
+                            <form #card="ngForm" action="" method="POST" class="">
+
+                                <!--Grid row-->
+
+
+                                <!--address-->
+                                <div class="mb-1">
+                                    <label for="cardNumber" class="">Card Number</label>
+                                    <input value="" type="number" #cardNumber="ngModel" name="cardNumber"
+                                        class="form-control" ngModel placeholder="" required
+                                        onKeyPress="if(this.value.length==16) return false;" required>
+
+                                    <br>
+
+                                    <div *ngIf="cardNumber.invalid && cardNumber.touched" class="alert alert-danger">
+
+                                        <p *ngIf="cardNumber.hasError('required')">Card Number is required</p>
+
+                                        < </div>
+                                    </div>
+                                    <!--Grid row-->
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 ">
+                                            <label for="cvv">CVV</label>
+                                            <input value="" #cvv="ngModel" type="number" name="cvv" class="form-control"
+                                                id="cvv" placeholder="" ngModel required
+                                                onKeyPress="if(this.value.length==4) return false;">
+                                            <br />
+                                            <div *ngIf="cvv.invalid && cvv.touched" class="alert alert-danger">
+
+                                                <p *ngIf="cvv.hasError('required')">CVV is required</p>
+
+
+
+
+                                            </div>
+                                        </div>
+                                        <!--Grid column-->
+                                        <div class="col-lg-4 col-md-12 mb-3">
+                                            <label for="cardType">Card Type</label>
+                                            <select class="custom-select d-block w-100 form-control" id="cardType"
+                                                #cardType="ngModel" name="cardType" ngModel required>
+                                                <option value="">Choose...</option>
+                                                <option>Visa</option>
+                                                <option>Rupay</option>
+                                                <option>Master Card</option>
+
+                                            </select>
+                                            <br />
+                                            <div *ngIf="cardType.invalid && cardType.touched"
+                                                class="alert alert-danger">
+
+                                                <p *ngIf="cardType.hasError('required')">Card Type is required</p>
+
+
+                                            </div>
+
+                                        </div>
+                                        <!--Grid column-->
+
+
+
+
+                                        <!--Grid column-->
+                                        <div class="col-lg-4 col-md-6 mb-3">
+
+                                            <label for="expiry">Expiry</label>
+                                            <input value="" type="text" #expiry="ngModel" name="expiry" ngModel
+                                                class="form-control" id="expiry" placeholder="" required>
+                                            <br />
+                                            <div *ngIf="expiry.invalid && expiry.touched" class="alert alert-danger">
+
+                                                <p *ngIf="expiry.hasError('required')">Expiry is required</p>
+
+
+                                            </div>
+
+                                        </div>
+                                        <!--Grid column-->
+
+                                    </div>
+
+                                    <button class="btn btn-success btn-block text-uppercase" type="button"
+                                        (click)="addCard(card)">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-4 mt-4 shadow-lg p-3 mb-8 bg-white rounded ml-4 mx-auto">
+            <div class="row shadow-none p-3 mb-5 bg-light rounded">
+                <h4 class="text-center">Price Details</h4>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <p>Subtotal : </p>
+                </div>
+                <div class="col">
+                    <p>$ {{subTotal(0)}} </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <p> Delivery : </p>
+                </div>
+                <div class="col">
+                    <div *ngIf="cartItems.length == 0; else forty">
+                        <p>$ 0</p>
+                    </div>
+                    <ng-template #forty>
+                        <p>$ 4.99</p>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <p> Tax : </p>
+                </div>
+                <div class="col">
+                    <p>$ {{totalGst(0)}}</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <h5> Order Total : </h5>
+                </div>
+                <div class="col">
+                    <h5>
+                        <div *ngIf="cartItems.length == 0; else total">
+                            <p>$ 0</p>
+                        </div>
+                        <ng-template #total>
+                            $ {{Total(0)}}
+                        </ng-template>
+                    </h5>
+                </div>
+            </div>
+            <div *ngIf="selectedAddress != '' && selectedCard != '' && enteredcvv.length >= 3">
+                <div class="row mt-4 text-center mx-auto">
+                    <button class="btn btn-primary" (click)="addOrder()">Proceed to buy</button>
+                </div>
+            </div>
+            <div *ngIf="selectedAddress == '' || selectedCard == '' || enteredcvv.length < 3">
+                <div class="row mt-4 text-center mx-auto">
+                    <button class="btn btn-primary disabled" [routerLink]="['/checkout']">Proceed to buy</button>
+                </div>
+            </div>
+        </div>
+        <!--Grid column-->
+
+    </div>
+</div>
