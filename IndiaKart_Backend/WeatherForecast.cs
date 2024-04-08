@@ -1,6 +1,6 @@
 using System;
 
-namespace IndiaKart_Backend
+namespace IndiaKart
 {
     public class WeatherForecast
     {

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace online_shopping.Controllers
+namespace IndiaKart.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
