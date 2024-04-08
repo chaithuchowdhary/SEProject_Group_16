@@ -17,6 +17,8 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductsPageComponent } from './products-page/products-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { SignupComponent } from './signup/signup.component';
     CartPageComponent,
     ProductsPageComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CheckoutComponent,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,
