@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
       # indiakart_homepage folder working directory.
-        working-directory: indiakart_hompage
+        working-directory: ./indiakart_hompage
    
     strategy:
       matrix:
