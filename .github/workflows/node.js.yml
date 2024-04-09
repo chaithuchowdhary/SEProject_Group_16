@@ -27,11 +27,15 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install dependencies
-      run: npm ci
-      working-directory: ./indiakart_homepage
+      run: |
+        cd indiakart_homepage
+        npm ci
     - name: Build
-      run: npm run build --if-present
-      working-directory: ./indiakart_homepage
+      run: |
+        cd indiakart_homepage
+        npm run build --if-present
     - name: Test
-      run: npm test
+      run: |
+        cd indiakart_homepage
+        npm test
       working-directory: ./indiakart_homepage
