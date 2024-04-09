@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row mt-4 mx-auto">
+    <div class="col-5 mx-auto">
+      <!-- <div class="justify-content-md-end d-grid mb-2">
+        <button type="submit" class="btn btn-primary">Wishlist</button>
+      </div> -->
+      <!-- <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" class="img-fluid"> -->
+      <!-- <lib-ngx-image-zoom  [zoomMode]=zoomMode [thumbImage]=images[index].image [fullImage]=images[index].image [lensWidth]="150"
+        [lensHeight]="150" [scrollStepSize]=0.05 [enableLens]=true [circularLens]=true>
+      </lib-ngx-image-zoom> -->
+      <!-- <div class="row mt-3">
+        <div class="col-md-3 mx-auto" *ngFor="let img of images; let i = index">
+          <div class="col">
+            <img src={{img.image}} class="img" (click)="clicked(i)">
+          </div>
+        </div>
+      </div> -->
+      <div class="row mt-3">
+        <div class="col-md-3 mx-auto">
+          <div class="col">
+            <img src={{product[0].thumbnailImage}} class="img">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 relative bg">
+      <br />
+      <h4 class="">
+        {{product[0].productName}}
+      </h4>
+      <p class="font">
+        {{product[0].description}}
+      </p>
+      <br />
+      <form action="" class="d-flex flex-column button">
+        <div class="row">
+          <div class="col">
+            <h6>
+              Category : {{product[0].categoryName}}
+            </h6>
+          </div>
+          <div class="col">
+            <h6>
+              Brand : {{product[0].brand}}
+            </h6>
+          </div>
+        </div>
+        <h6>
+          Sold by : {{product[0].companyName}}
+        </h6>
+        <h6 class="mt-auto">
+          Price : ${{product[0].price}} /-
+        </h6>
+        <br />
+        <div class="row mx-auto">
+          <div class="col">
+            <button type="submit" class="btn btn-outline-primary b1" (click)="addCart(product[0])">Add to cart</button>
+          </div>
+
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+

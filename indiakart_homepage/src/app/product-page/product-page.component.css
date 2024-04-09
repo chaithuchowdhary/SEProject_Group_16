@@ -1,0 +1,52 @@
+.search{
+    width: 100%;
+  }
+  .button{
+    display: block;
+    bottom: 20px;
+  
+    width: 100%;
+    position: absolute;
+  }
+  .relative{
+    position: relative;
+  }
+  .button>button{
+    height: 50px;
+  }
+  
+  ::ng-deep .ngxImageZoomContainer > img{
+    min-height: 300px;
+    max-height: 300px;
+    min-width: 350px;
+    max-width: 350px;
+    object-fit: fill;
+  }
+  .b1{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: serif;
+    height: 50px;
+    width: 150px;
+    /* margin-left: 20%; */
+  }
+  
+  
+    .bg{
+      background-color: rgb(228, 224, 224);
+      border-radius: 20px;
+    }
+  
+    .font{
+      font-size: 20px;
+    }
+  
+    .img{
+      width: 350px;
+      height: 400px;
+      object-fit: fill;
+      border-radius: 3px;
+      padding: 3px;
+      background-color: rgb(216, 212, 212);
+    }
+  
