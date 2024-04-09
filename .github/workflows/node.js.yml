@@ -8,15 +8,14 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+defaults:
+  run:
+    working-directory: indiakart_homepage
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    defaults:
-      run:
-      # indiakart_homepage folder working directory.
-        working-directory: ./indiakart_hompage
    
     strategy:
       matrix:
