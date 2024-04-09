@@ -69,7 +69,7 @@ export class CheckoutComponent implements OnInit {
       const element = this.cartItems[index];
       total += element.cost;
     }
-    return total + total * 0.02 + 49;
+    return total + total * 0.02 ;
 
   }
 

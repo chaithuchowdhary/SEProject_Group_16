@@ -14,7 +14,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CompareComponent } from './compare/compare.component';
 import { TopproductsComponent } from './topproducts/topproducts.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
-import { ProductsPageComponent } from './products-page/products-page.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -32,7 +32,7 @@ import { OrderPlacedComponent } from './order-placed/order-placed.component';
     CompareComponent,
     TopproductsComponent,
     CartPageComponent,
-    ProductsPageComponent,
+    ProductPageComponent,
     LoginComponent,
     SignupComponent,
     CheckoutComponent,

@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CompareComponent } from './compare/compare.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
-import { ProductsPageComponent } from './products-page/products-page.component';
+import { ProductPageComponent } from './product-page/product-page.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
     children: [
       { path: 'homepage', component: CarouselComponent },
       { path: "products", component: ProductsListComponent },
-      { path: "products/:id", component: ProductsPageComponent },
+      { path: "products/:id", component: ProductPageComponent },
       { path: 'compare', component: CompareComponent },
       { path: "cart", component: CartPageComponent },
       { path: "checkout", component: CheckoutComponent },
