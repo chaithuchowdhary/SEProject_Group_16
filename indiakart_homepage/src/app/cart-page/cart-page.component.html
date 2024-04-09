@@ -73,7 +73,7 @@
           </div>
           <div class="col mt-3">
             <p>
-              ₹ {{item.cost}}
+              $ {{item.cost}}
             </p>
           </div>
           <!-- <div class="col">
@@ -98,30 +98,30 @@
       </div>
       <div class="row text-center">
         <div class="col"><p>Subtotal : </p></div>
-        <div class="col"><p> ₹ {{subTotal(0)}} </p></div>
+        <div class="col"><p> $ {{subTotal(0)}} </p></div>
       </div>
       <div class="row text-center">
         <div class="col"><p> Delivery : </p></div>
         <div class="col">
           <div *ngIf="cartItems.length == 0; else forty">
-            <p>₹ 0 </p>
+            <p>$ 0 </p>
         </div>
         <ng-template #forty>
-            <p> ₹ 49</p>
+            <p> $ 0 </p>
         </ng-template>
           </div>
       </div>
       <div class="row text-center">
-        <div class="col"><p> GST : </p></div>
-        <div class="col"><p> ₹ {{totalGst(0)}} </p></div>
+        <div class="col"><p> Tax : </p></div>
+        <div class="col"><p> $ {{totalGst(0)}} </p></div>
       </div>
       <div class="row text-center">
         <div class="col"><h5> Order Total : </h5></div>
         <div class="col"><h5><div *ngIf="cartItems.length == 0; else total">
-          <p> ₹ 0</p>
+          <p> $ 0</p>
       </div>
       <ng-template #total>
-        ₹ {{Total(0)}}
+        $ {{Total(0)}}
       </ng-template></h5></div>
       </div>
   

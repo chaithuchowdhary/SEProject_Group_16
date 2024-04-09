@@ -55,7 +55,8 @@ export class CartPageComponent implements OnInit {
       const element = this.cartItems[index];
       total += element.cost;
     }
-    return total + total * 0.02 + 49;
+    let sum = total + total * 0.02 + 1.0;
+    return Math.round(sum);
 
   }
 
