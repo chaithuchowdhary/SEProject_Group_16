@@ -13,10 +13,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+   
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14.x, 16.x, 20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -27,15 +27,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Install dependencies
-      run: |
-        cd indiakart_homepage
-        npm ci
-    - name: Build
-      run: |
-        cd indiakart_homepage
-        npm run build --if-present
-    - name: Test
-      run: |
-        cd indiakart_homepage
-        npm test
       working-directory: ./indiakart_homepage
+      run: npm ci
+    - name: Build
+      working-directory: ./indiakart_homepage
+      run: npm run build --if-present
+    - name: Test
+      working-directory: ./indiakart_homepage
+      run: npm test
