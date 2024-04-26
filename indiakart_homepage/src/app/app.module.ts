@@ -25,29 +25,40 @@ import { RetaileraccountComponent } from './retaileraccount/retaileraccount.comp
 import { AddComponent } from './retaileraccount/add/add.component';
 import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
 import { ViewComponent } from './retaileraccount/view/view.component';
+import { UseraccountComponent } from './useraccount/useraccount.component';
+import { EditComponent } from './useraccount/edit/edit.component';
+import { OrdersComponent } from './useraccount/orders/orders.component';
+import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
+import { OrderItemsComponent } from './useraccount/orders/order-items/order-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    FooterComponent,
-    NavbarComponent,
     CarouselComponent,
-    ProductsListComponent,
-    CompareComponent,
+    NavbarComponent,
     TopproductsComponent,
-    CartPageComponent,
     ProductPageComponent,
+    CartPageComponent,
+    CheckoutComponent,
+    ProductsListComponent,
     LoginComponent,
     SignupComponent,
-    CheckoutComponent,
-    OrderPlacedComponent,
-    RetailerSignupComponent,
     RetailerLoginComponent,
+    HomeComponent,
+    RetailerSignupComponent,
+    UseraccountComponent,
+    EditComponent,
+    OrdersComponent,
+    ViewaccountComponent,
     RetaileraccountComponent,
+    ViewComponent,
     AddComponent,
     EditretailerComponent,
-    ViewComponent,
+    OrderItemsComponent,
+    AdminComponent,
+    CompareComponent,
+    ManageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
