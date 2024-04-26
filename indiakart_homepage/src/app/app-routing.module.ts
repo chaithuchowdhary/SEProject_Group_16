@@ -1,26 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsListComponent } from './products-list/products-list.component';
-import { HomeComponent } from './home/home.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { CompareComponent } from './compare/compare.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { ProductPageComponent } from './product-page/product-page.component';
+import { ProductsListComponent } from './products-list/products-list.component';
 import { LoginComponent } from './login/login.component';
+
+import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
 import { SignupComponent } from './signup/signup.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { OrderPlacedComponent } from './order-placed/order-placed.component';
-import { AddComponent } from './retaileraccount/add/add.component';
-import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
+import { HomeComponent } from './home/home.component';
+import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { UseraccountComponent } from './useraccount/useraccount.component';
+import { EditComponent } from './useraccount/edit/edit.component';
+import { OrdersComponent } from './useraccount/orders/orders.component';
+import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
 import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
 import { ViewComponent } from './retaileraccount/view/view.component';
-import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
-import { EditComponent } from './useraccount/edit/edit.component';
+import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
+import { AddComponent } from './retaileraccount/add/add.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { OrderItemsComponent } from './useraccount/orders/order-items/order-items.component';
-import { OrdersComponent } from './useraccount/orders/orders.component';
-import { UseraccountComponent } from './useraccount/useraccount.component';
-import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
-
+import { CompareComponent } from './compare/compare.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManageComponent } from './admin/manage/manage.component';
 
 
 const routes: Routes = [
@@ -32,10 +35,11 @@ const routes: Routes = [
       { path: 'homepage', component: CarouselComponent },
       { path: "products", component: ProductsListComponent },
       { path: "products/:id", component: ProductPageComponent },
-      { path: 'compare', component: CompareComponent },
       { path: "cart", component: CartPageComponent },
       { path: "checkout", component: CheckoutComponent },
-      { path: "orderplaced", component: OrderPlacedComponent },
+      { path: 'orderplaced', component: OrderPlacedComponent },
+      { path: 'compare', component: CompareComponent },
+
       {
         path: 'user', component: UseraccountComponent,
         children: [
@@ -51,6 +55,9 @@ const routes: Routes = [
       }
     ]
   },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'retailerlogin', component: RetailerLoginComponent },
   { path: 'retailer-signup', component: RetailerSignupComponent },
   {
     path: 'retailer', component: RetaileraccountComponent,
@@ -62,8 +69,11 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent }
     ]
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'admin', component: AdminComponent,
+    children: [
+      {path:'',redirectTo:'manage',pathMatch:'full'},
+      {path:'manage',component:ManageComponent}
+    ] }
 ];
 
 

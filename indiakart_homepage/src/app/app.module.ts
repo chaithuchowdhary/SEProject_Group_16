@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +20,7 @@ import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
+import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
 import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
 import { AddComponent } from './retaileraccount/add/add.component';
 import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
@@ -30,33 +31,34 @@ import { OrdersComponent } from './useraccount/orders/orders.component';
 import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
 import { OrderItemsComponent } from './useraccount/orders/order-items/order-items.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    FooterComponent,
-    NavbarComponent,
     CarouselComponent,
-    ProductsListComponent,
-    CompareComponent,
+    NavbarComponent,
     TopproductsComponent,
-    CartPageComponent,
     ProductPageComponent,
+    CartPageComponent,
+    CheckoutComponent,
+    ProductsListComponent,
     LoginComponent,
     SignupComponent,
-    CheckoutComponent,
-    OrderPlacedComponent,
+    RetailerLoginComponent,
+    HomeComponent,
     RetailerSignupComponent,
-    RetaileraccountComponent,
-    AddComponent,
-    EditretailerComponent,
-    ViewComponent,
     UseraccountComponent,
     EditComponent,
     OrdersComponent,
     ViewaccountComponent,
-    OrderItemsComponent
+    RetaileraccountComponent,
+    ViewComponent,
+    AddComponent,
+    EditretailerComponent,
+    OrderItemsComponent,
+    AdminComponent,
+    CompareComponent,
+    ManageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -65,9 +67,9 @@ import { OrderItemsComponent } from './useraccount/orders/order-items/order-item
     NgbModule,
     FormsModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
