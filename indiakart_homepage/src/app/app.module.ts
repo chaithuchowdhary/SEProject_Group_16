@@ -20,6 +20,10 @@ import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
+import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
+import { AddComponent } from './retaileraccount/add/add.component';
+import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
+import { ViewComponent } from './retaileraccount/view/view.component';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { RetailerSignupComponent } from './retailer-signup/retailer-signup.compo
     SignupComponent,
     CheckoutComponent,
     OrderPlacedComponent,
-    RetailerSignupComponent
+    RetailerSignupComponent,
+    RetaileraccountComponent,
+    AddComponent,
+    EditretailerComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,

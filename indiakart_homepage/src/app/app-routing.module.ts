@@ -10,6 +10,11 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
+import { AddComponent } from './retaileraccount/add/add.component';
+import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
+import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
+import { ViewComponent } from './retaileraccount/view/view.component';
+import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
 
 
 
@@ -26,6 +31,17 @@ const routes: Routes = [
       { path: "cart", component: CartPageComponent },
       { path: "checkout", component: CheckoutComponent },
       { path: "orderplaced", component: OrderPlacedComponent }
+    ]
+  },
+  { path: 'retailer-signup', component: RetailerSignupComponent },
+  {
+    path: 'retailer', component: RetaileraccountComponent,
+    children: [
+      { path: '', redirectTo: 'view', pathMatch: 'full' },
+      { path: 'view', component: ViewComponent },
+      { path: 'edit', component: EditretailerComponent },
+      { path: 'add-product', component: AddComponent },
+      { path: 'home', component: HomeComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
