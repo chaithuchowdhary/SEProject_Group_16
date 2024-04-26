@@ -15,44 +15,43 @@ import { EditretailerComponent } from './retaileraccount/editretailer/editretail
 import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
 import { ViewComponent } from './retaileraccount/view/view.component';
 import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
-
-
+import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home/homepage', pathMatch: 'full' },
 
   {
-    path: 'home', component: HomeComponent,
+    path: 'home',
+    component: HomeComponent,
     children: [
       { path: 'homepage', component: CarouselComponent },
-      { path: "products", component: ProductsListComponent },
-      { path: "products/:id", component: ProductPageComponent },
+      { path: 'products', component: ProductsListComponent },
+      { path: 'products/:id', component: ProductPageComponent },
       { path: 'compare', component: CompareComponent },
-      { path: "cart", component: CartPageComponent },
-      { path: "checkout", component: CheckoutComponent },
-      { path: "orderplaced", component: OrderPlacedComponent }
-    ]
+      { path: 'cart', component: CartPageComponent },
+      { path: 'checkout', component: CheckoutComponent },
+      { path: 'orderplaced', component: OrderPlacedComponent },
+    ],
   },
   { path: 'retailer-signup', component: RetailerSignupComponent },
+  { path: 'retailerlogin', component: RetailerLoginComponent },
   {
-    path: 'retailer', component: RetaileraccountComponent,
+    path: 'retailer',
+    component: RetaileraccountComponent,
     children: [
       { path: '', redirectTo: 'view', pathMatch: 'full' },
       { path: 'view', component: ViewComponent },
       { path: 'edit', component: EditretailerComponent },
       { path: 'add-product', component: AddComponent },
-      { path: 'home', component: HomeComponent }
-    ]
+      { path: 'home', component: HomeComponent },
+    ],
   },
   { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
 ];
-
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

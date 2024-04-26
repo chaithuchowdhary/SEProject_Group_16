@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -20,11 +20,11 @@ import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
+import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
 import { RetaileraccountComponent } from './retaileraccount/retaileraccount.component';
 import { AddComponent } from './retaileraccount/add/add.component';
 import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
 import { ViewComponent } from './retaileraccount/view/view.component';
-
 
 @NgModule({
   declarations: [
@@ -43,10 +43,11 @@ import { ViewComponent } from './retaileraccount/view/view.component';
     CheckoutComponent,
     OrderPlacedComponent,
     RetailerSignupComponent,
+    RetailerLoginComponent,
     RetaileraccountComponent,
     AddComponent,
     EditretailerComponent,
-    ViewComponent
+    ViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,9 +56,9 @@ import { ViewComponent } from './retaileraccount/view/view.component';
     NgbModule,
     FormsModule,
     Ng2SearchPipeModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
