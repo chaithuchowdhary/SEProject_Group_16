@@ -1,0 +1,56 @@
+<div class="card mb-4">
+    <div class="card-body">
+        <p class="d-flex justify-content-center">Edit your account</p>
+        <form (ngSubmit)="submit()">
+            <div class="row">
+                <div class="mb-2 col-6">
+                    <input class="form-control form-control-lg" [(ngModel)]="user.firstName" name="firstname" placeholder="First Name"
+                        required type="text">
+                    <label>First Name</label>
+                </div>
+                <div class="mb-2 col-6">
+                    <input class="form-control form-control-lg" [(ngModel)]="user.lastName" name="lastName" placeholder="First Name"
+                        required type="text">
+                    <label>Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-2 col-6">
+                    <input class="form-control form-control-lg" [(ngModel)]="user.email" name="email" placeholder="First Name" required
+                        type="text">
+                    <label>E-Mail</label>
+                </div>
+                <div class="mb-2 col-6">
+                    <input class="form-control form-control-lg" [(ngModel)]="user.phone" name="phone" placeholder="First Name" required
+                        type="text">
+                    <label>Phone number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-2 col-6">
+                    <input type="text" [ngModel]="user.companyPhone" name="companyPhone"
+                        class="form-control form-control-lg" placeholder="Enter company phone"/>
+                    <label class="form-label">Company Phone</label>
+                </div>
+                <div class="mb-2 col-6">
+                    <input type="text" [(ngModel)]="user.companyAddress" name="companyAddress"
+                        class="form-control form-control-lg" placeholder="Company Address" />
+                    <label class="form-label">Company Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mb-2 col-6">
+                    <input type="text" [ngModel]="user.username" name="username"
+                        class="form-control form-control-lg" placeholder="Enter username" [disabled]="user.username"/>
+                    <label class="form-label">username</label>
+                </div>
+                <div class="mb-2 col-6">
+                    <input type="password" [(ngModel)]="user.password" name="password"
+                        class="form-control form-control-lg" placeholder="Enter password" />
+                    <label class="form-label">Password</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>

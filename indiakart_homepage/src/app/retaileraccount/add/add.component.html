@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="row">
+        <h5 class="text-start">If category is not available add here</h5>
+        <div class="form-group row">
+            <form novalidate (ngSubmit)=" onCatadd()" class="form-inline">
+                <div class="col-4">
+                    <div class="form-group">
+                        <label for="name"> Category Name</label>
+                        <input class="form-control" name="name" required type="text" name="name"
+                            placeholder="Enter new category name" [(ngModel)]="catname.name">
+                        <br>
+                        <tr><button type="submit" class="btn btn-primary">Add</button></tr>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="row mt-4">
+        <h3 class="text-center">Add Product</h3>
+        <form #regform="ngForm" novalidate (ngSubmit)="onSubmit(regform.value)">
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+
+                        <p>
+                            <label for="name">Name of the product</label>
+                            <input class="form-control" #name="ngModel" required type="text" name="name"
+                                placeholder="Name" ngModel>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <p>
+                            <label for="categoryId">Choose Category</label>
+                            <select class="form-select" #categoryId="ngModel" name="categoryId" placeholder="Enter"
+                                aria-label="Default select example" ngModel>
+                                <option type="number" *ngFor="let cat of CategoryList" value={{cat.id}}>{{cat.name}}
+                                </option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <p>
+                    <label for="description">Description</label>
+                    <textarea class="form-control" #description="ngModel" rows="5" cols="60" type="text"
+                        name="description" ngModel> Enter details:
+                            </textarea><br>
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <p>
+                            <label for="price">Price</label>
+                            <input class="form-control" #price="ngModel" type="number" name="price" placeholder="price"
+                                ngModel>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <p>
+                            <label for="stock">Stock</label>
+                            <input class="form-control" #stock="ngModel" type="number" name="stock" placeholder="Stock"
+                                ngModel>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <p>
+                            <label for="soldCount">Sold Count</label>
+                            <input class="form-control" #soldCount="ngModel" type="number" name="soldCount"
+                                placeholder="Sold Count" ngModel>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p>
+                    <label for="image">Image URL</label>
+                    <input class="form-control" #image="ngModel" type="text" name="image" placeholder="Image URL"
+                        ngModel>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <p>
+                            <label for="brand">Brand</label>
+                            <input class="form-control" #brand="ngModel" type="text" name="brand"
+                                placeholder="Name of the brand" ngModel>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                            <label for="isAvailable">Is Available</label>&nbsp;
+                            <br>
+                            <div class="form-check form-check-inline">
+                            <input class="form-check-input" #isAvailable="ngModel" type="radio" name="isAvailable" value="false"
+                                ngModel><label class="form-check-label">
+                                InActive
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" #isAvailable="ngModel" type="radio" name="isAvailable" value="true"
+                                ngModel ><label class="form-check-label">
+                                Active
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <tr class="d-flex justify-content-center"><button type="submit" class="btn btn-primary">Submit</button></tr>
+        </form>
+    </div>
+</div>
