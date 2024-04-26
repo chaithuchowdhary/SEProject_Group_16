@@ -24,6 +24,11 @@ import { RetaileraccountComponent } from './retaileraccount/retaileraccount.comp
 import { AddComponent } from './retaileraccount/add/add.component';
 import { EditretailerComponent } from './retaileraccount/editretailer/editretailer.component';
 import { ViewComponent } from './retaileraccount/view/view.component';
+import { UseraccountComponent } from './useraccount/useraccount.component';
+import { EditComponent } from './useraccount/edit/edit.component';
+import { OrdersComponent } from './useraccount/orders/orders.component';
+import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
+import { OrderItemsComponent } from './useraccount/orders/order-items/order-items.component';
 
 
 @NgModule({
@@ -46,7 +51,12 @@ import { ViewComponent } from './retaileraccount/view/view.component';
     RetaileraccountComponent,
     AddComponent,
     EditretailerComponent,
-    ViewComponent
+    ViewComponent,
+    UseraccountComponent,
+    EditComponent,
+    OrdersComponent,
+    ViewaccountComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,

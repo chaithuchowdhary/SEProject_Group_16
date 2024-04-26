@@ -1,0 +1,75 @@
+
+<div class="card mb-4">
+    <div class="card-body">
+      <div class="row mt-3">
+
+                  <div class="col">
+                    <strong>
+                      Order Id
+                    </strong>
+                  </div>
+                  <div class="col ">
+                    <strong class=" ">
+                      Shipping Address
+                    </strong>
+                  </div>
+                  <div class="col">
+                    <strong>
+                       Cost
+                    </strong>
+                  </div>
+                  <div class="col ">
+                    <strong>
+                     Order Date
+                    </strong>
+                  </div>
+                  <div class="col ">
+                    <strong>
+                     Action
+                    </strong>
+                  </div>
+
+
+      <div class="row mt-3" *ngFor="let order of orders; let i=index">
+<hr>
+          <div class="col mt-3">
+            <p>
+              {{order.id}}
+            </p>
+          </div>
+          <div class="col ">
+            <p class="mx-3 mt-3">
+              {{order.shippingAddress}}
+            </p>
+          </div>
+          <div class="col mt-3">
+            <p>
+              ₹ {{order.total}}
+            </p>
+          </div>
+          <div class="col mt-3">
+            <p>
+             {{order.date | date:'M/d/yy, h:mm a'}}
+            </p>
+          </div>
+
+          <!-- <div class="col">
+            <div class="input-group">
+              <span class="input-group-btn">
+                  <button class="btn btn-white btn-minuse" type="button" (click)="decrease(i)">-</button>
+              </span>
+              <div class="m-2">{{item.quantity}}</div>
+              <span class="input-group-btn">
+                  <button class="btn btn-red btn-pluss" type="button" (click)="increase(i)">+</button>
+              </span>
+            </div>
+          </div> -->
+          <div class="col ml-3">
+            <a [routerLink]="['items', order.id]" class="btn btn-outline-success mx-4 mt-2"><i class="fa fa-eye"></i></a>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+

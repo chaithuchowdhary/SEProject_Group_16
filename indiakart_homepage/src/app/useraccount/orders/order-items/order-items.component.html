@@ -1,0 +1,81 @@
+
+<div class="card">
+    <div class="row m-4">
+    
+      <div class="col-1">
+        <strong>Sr No</strong>
+      </div>
+      <div class="col">
+        <strong>Image</strong>
+      </div>
+      <div class="col">
+        <strong>
+          Product
+        </strong>
+    
+    
+      </div>
+      <div class="col">
+        <strong>
+          Brand
+        </strong>
+    
+    
+      </div>
+      <div class="col">
+        <strong>
+          Quantity
+        </strong>
+      </div>
+      <div class="col">
+        <strong>
+          Price
+        </strong>
+      </div>
+      <div class="col">
+        <strong>
+          Date Added
+        </strong>
+      </div>
+    
+    </div>
+    <div class="row mx-4" *ngFor="let item of items; let i=index">
+    <hr>
+      <div class="col-1 mt-2">
+        <strong class="center mt-3">{{i+1}}</strong>
+      </div>
+        <div class="col ">
+          <img src={{item.image}} class=" w-50">
+        </div>
+        <div class="col mt-3">
+          <p>
+            {{item.name}}
+          </p>
+        </div>
+        <div class="col mt-3">
+          <p>
+            {{item.brand}}
+          </p>
+        </div>
+        <div class="col ">
+          <p class="mx-3 mt-3">
+            {{item.quantity}}
+          </p>
+        </div>
+        <div class="col mt-3">
+          <p>
+            ₹ {{item.cost}}
+          </p>
+        </div>
+        <div class="col ml-3 mt-3">
+          <p>
+           {{item.dateAdded | date:'d/M/y'}}
+          </p>
+        </div>
+    
+    
+      </div>
+    </div>
+    
+    
+    
