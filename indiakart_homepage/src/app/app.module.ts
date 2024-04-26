@@ -30,6 +30,8 @@ import { EditComponent } from './useraccount/edit/edit.component';
 import { OrdersComponent } from './useraccount/orders/orders.component';
 import { ViewaccountComponent } from './useraccount/viewaccount/viewaccount.component';
 import { OrderItemsComponent } from './useraccount/orders/order-items/order-items.component';
+import { AdminComponent } from './admin/admin.component';
+import { ManageComponent } from './admin/manage/manage.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,8 @@ import { OrderItemsComponent } from './useraccount/orders/order-items/order-item
     AdminComponent,
     CompareComponent,
     ManageComponent,
-    FooterComponent
+    FooterComponent,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,

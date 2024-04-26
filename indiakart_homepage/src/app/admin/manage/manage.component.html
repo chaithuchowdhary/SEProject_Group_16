@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Username</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Company name</th>
+        <th scope="col">Company Phone Number</th>
+        <th scope="col">Last Login</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let r of retailers; index as i">
+        <tr *ngIf="r.isActive">
+          <td>{{r.id}}</td>
+          <td>
+            {{r.firstName}} {{r.lastName}}
+          </td>
+          <td>{{ r.username}}</td>
+          <td>{{ r.phone}}</td>
+          <td>{{r.email}}</td>
+          <td>{{r.companyName}}</td>
+          <td>{{r.companyPhone}}</td>
+          <td>{{r.lastLogin}}</td>
+          <td><a class="btn btn-outline-secondary" (click)="deactivate(r)">Deactivate</a></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
