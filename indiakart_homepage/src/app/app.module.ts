@@ -20,6 +20,7 @@ import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { RetailerSignupComponent } from './retailer-signup/retailer-signup.component';
+import { RetailerLoginComponent } from './retailer-login/retailer-login.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RetailerSignupComponent } from './retailer-signup/retailer-signup.compo
     SignupComponent,
     CheckoutComponent,
     OrderPlacedComponent,
-    RetailerSignupComponent
+    RetailerSignupComponent,
+    RetailerLoginComponent
   ],
   imports: [
     BrowserModule,
