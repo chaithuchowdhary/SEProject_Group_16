@@ -46,7 +46,7 @@
                             <h6>Category</h6>
                         </div>
                         <div class="col-2">
-                            <select #catname="ngModel" name="catname" placeholder="Enter" class=""
+                            <select #catname="ngModel" name="catname" placeholder="Enter" class="rounded"
                                 aria-label="Default select example" ngModel>
                                 <option value="0">Show all</option>
                                 <option *ngFor="let cat of CategoryList" value={{cat.id}}>{{cat.name}}</option>
@@ -137,35 +137,24 @@
 
         <div class="col-md-9">
             <div class="row">
-                <div class="d-flex">
-
-                    <div class="card m-4 d-flex align-items-stretch" style="width: 18rem;"
-                        *ngFor="let prod of Prods | filter:searchTerm">
+                <!-- Loop through products -->
+                <div class="col-md-4" *ngFor="let prod of Prods | filter:searchTerm">
+                    <div class="card m-4 d-flex align-items-stretch" style="width: 18rem;">
                         <a href="" class="mytext" [routerLink]="[prod.productId]">
                             <img class="card-img-top" src="{{prod.image}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{prod.name}}</h5>
                                 <p class="card-text">Price : <strong> $ {{prod.price}}</strong></p>
                                 <p class="card-text">Brand : <strong>{{prod.brand}}</strong></p>
-
-
                             </div>
                         </a>
                         <button class="btn btn-primary btn-block m-3" (click)="addCart(prod)">Add to cart</button>
-
                     </div>
-
                 </div>
-
+                <!-- End loop -->
             </div>
-
-
-
         </div>
-
-
 
     </div>
 
 </div>
-{{searchTerm | json}}

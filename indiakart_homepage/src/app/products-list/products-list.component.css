@@ -16,5 +16,7 @@
     border-color: rgb(13,110,253);
   }
 
-
+.rounded{
+  border-radius: 0.5rem; 
+}
   
