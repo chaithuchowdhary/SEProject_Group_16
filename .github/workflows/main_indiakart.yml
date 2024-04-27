@@ -55,7 +55,7 @@
 #           package: .
 #           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7894DD08A41C42288A6C5E39DC1B3038 }}
 
-name: Build and deploy Node.js app to Azure Web App - DevOpsExampleProject
+name: Build and deploy IndiaKart app to Azure Web App
 
 on:
   push:
