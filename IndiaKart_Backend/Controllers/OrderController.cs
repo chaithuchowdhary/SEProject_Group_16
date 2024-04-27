@@ -33,9 +33,10 @@ namespace IndiaKart.Controllers
         }
 
         [HttpGet("items/{id}")]
-        public IEnumerable<OrderItemsViewModel> GetItems(int id)
+        public IEnumerable<OrderItem> GetItems(int id)
         {
-            var items = _context.OrderItemsView.FromSqlInterpolated($"dbo.SP_OrderItems {id}").ToList();
+           // var items = _context.OrderItemsView.FromSqlInterpolated($"dbo.SP_OrderItems {id}").ToList();
+            var items = _context.OrderItems.ToList().FindAll(o=>o.id == id);
             return items;
         }
 
