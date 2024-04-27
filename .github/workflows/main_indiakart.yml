@@ -1,14 +1,72 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - indiakart
+# name: Build and deploy Node.js app to Azure Web App - indiakart
+
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
+
+# jobs:
+#   build:
+#     runs-on: windows-latest
+
+#     steps:
+#       - uses: actions/checkout@v4
+
+#       - name: Set up Node.js version
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '20.x'
+
+#       - name: npm install, build, and test
+#         run: |
+#           cd indiakart_homepage
+#           npm install
+#           npm run build --if-present
+      
+#       - name: Upload artifact for deployment job
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: node-app
+#           path: indiakart_homepage/dist/indiakart_homepage
+
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build
+#     environment:
+#       name: 'Production'
+#       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+    
+#     steps:
+#       - name: Download artifact from build job
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: node-app
+      
+#       - name: 'Deploy to Azure Web App'
+#         uses: azure/webapps-deploy@v2
+#         id: deploy-to-webapp
+#         with:
+#           app-name: 'indiakart'
+#           slot-name: 'Production'
+#           package: .
+#           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7894DD08A41C42288A6C5E39DC1B3038 }}
+
+name: Build and deploy Node.js app to Azure Web App - DevOpsExampleProject
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
-
+    inputs:
+      deploy-to-production:
+        description: 'Deploy to production'
+        required: true
+        default: 'false'
 jobs:
   build:
     runs-on: windows-latest
@@ -33,11 +91,11 @@ jobs:
           name: node-app
           path: indiakart_homepage/dist/indiakart_homepage
 
-  deploy:
+  deploy-develop:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'Development'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     
     steps:
@@ -48,7 +106,35 @@ jobs:
       
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
+        with:
+          app-name: 'indiakartTest'
+          slot-name: 'Production'
+          package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_88F3F256D9CD4D14BA7A269C96FAE9FE }}
+        
+  deploy-production:
+    runs-on: ubuntu-latest
+    needs: deploy-develop
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy-to-production == 'true'
+    environment:
+      name: 'Production'
+    
+    steps:
+      - name: Manual approval
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "Approve deployment to production"
+          echo "To approve, set 'deploy-to-production' input to 'true' in the workflow dispatch event."
+          echo "Input value for deploy-to-production: ${{ github.event.inputs.deploy-to-production }}"
+
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: node-app
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.deploy-to-production == 'true'
+      
+      - name: 'Deploy to Azure Web App (Production)'
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'indiakart'
           slot-name: 'Production'
