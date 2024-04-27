@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: node-app
-          path: indiakart_homepage/dist/indiakart_homepag
+          path: indiakart_homepage/dist/indiakart_homepage
 
   deploy:
     runs-on: ubuntu-latest
