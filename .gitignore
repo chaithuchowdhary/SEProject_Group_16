@@ -9,4 +9,9 @@
 /IndiaKart_Backend/obj/Debug/
 IndiaKart_Backend/.vs/ProjectEvaluation/indiakart_backend.metadata.v7.bin
 IndiaKart_Backend/.vs/ProjectEvaluation/indiakart_backend.projects.v7.bin
-IndiaKart_Backend/bin/Debug/
+IndiaKart_Backend/bin/
+IndiaKart_Backend/.vs/ProjectEvaluation/
+IndiaKart_Backend/Properties/
+IndiaKart_Backend/.config/
+
+IndiaKart_Backend/IndiaKart_Backend.csproj.user
