@@ -34,7 +34,9 @@ jobs:
           
       - name : Testing
         if : always()
-        run : npx ng test --no-watch --no-progress --browsers=ChromeHeadless 
+        run : |
+          run: npm install
+          npx ng test --no-watch --no-progress --browsers=ChromeHeadless 
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
