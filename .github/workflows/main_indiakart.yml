@@ -35,7 +35,8 @@ jobs:
       - name : Testing
         if : always()
         run : |
-          run: npm install
+          cd indiakart_homepage
+          npm install
           npx ng test --no-watch --no-progress --browsers=ChromeHeadless 
       
       - name: Upload artifact for deployment job
