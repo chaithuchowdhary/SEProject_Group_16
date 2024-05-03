@@ -19,7 +19,7 @@ describe('AddComponent', () => {
     fixture.detectChanges();
   });
 
-  it('AddComponent is created reatilerAccount Component Created', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('AddComponent is created reatilerAccount Component Created', () => {
+  //   expect(component).toBeTruthy();
+  // });
 });

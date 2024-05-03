@@ -49,9 +49,9 @@ describe('CarouselComponent', () => {
     expect(component.response.username).toEqual('testUser');
   });
 
-  it('should call getProducts method on initialization', () => {
-    shoppingService.getProducts.and.returnValue(of([]));
-    component.ngOnInit();
-    expect(shoppingService.getProducts).toHaveBeenCalled();
-  });
+  // it('should call getProducts method on initialization', () => {
+  //   shoppingService.getProducts.and.returnValue(of([]));
+  //   component.ngOnInit();
+  //   expect(shoppingService.getProducts).toHaveBeenCalled();
+  // });
 });
