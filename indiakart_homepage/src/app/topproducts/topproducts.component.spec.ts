@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TopproductsComponent } from './topproducts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TopproductsComponent', () => {
   let component: TopproductsComponent;
@@ -8,7 +10,8 @@ describe('TopproductsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopproductsComponent ]
+      declarations: [ TopproductsComponent ],
+      imports : [ HttpClientModule,RouterTestingModule]
     })
     .compileComponents();
 
@@ -17,7 +20,7 @@ describe('TopproductsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Initiate the component and activate the routing module', () => {
     expect(component).toBeTruthy();
   });
 });

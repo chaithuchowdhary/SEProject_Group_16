@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewComponent } from './view.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ViewComponent', () => {
   let component: ViewComponent;
@@ -8,7 +10,8 @@ describe('ViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewComponent ]
+      declarations: [ ViewComponent ],
+      imports : [ HttpClientModule,RouterTestingModule ]
     })
     .compileComponents();
 
@@ -17,7 +20,7 @@ describe('ViewComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('ViewComponent is created after retaileraccount', () => {
     expect(component).toBeTruthy();
   });
 });

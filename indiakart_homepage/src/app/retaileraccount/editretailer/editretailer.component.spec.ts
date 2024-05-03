@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditretailerComponent } from './editretailer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('EditretailerComponent', () => {
   let component: EditretailerComponent;
@@ -8,7 +9,8 @@ describe('EditretailerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditretailerComponent ]
+      declarations: [ EditretailerComponent ],
+      imports : [ HttpClientModule ]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('EditretailerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('EditRetailer Component created on ngOnInit', () => {
     expect(component).toBeTruthy();
   });
 });

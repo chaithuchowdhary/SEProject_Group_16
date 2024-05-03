@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { OrderItemsComponent } from './order-items.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OrderItemsComponent', () => {
   let component: OrderItemsComponent;
@@ -9,7 +10,7 @@ describe('OrderItemsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ OrderItemsComponent ],
-      imports: [ HttpClientModule ] // Add HttpClientModule to imports
+      imports: [ HttpClientModule,RouterTestingModule ] 
     })
     .compileComponents();
 

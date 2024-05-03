@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditComponent } from './edit.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('EditComponent', () => {
   let component: EditComponent;
@@ -8,7 +10,8 @@ describe('EditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditComponent ]
+      declarations: [ EditComponent ],
+      imports : [ HttpClientModule, RouterTestingModule ]
     })
     .compileComponents();
 
@@ -17,7 +20,7 @@ describe('EditComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Edit Component creation after UserAccount is initialized', () => {
     expect(component).toBeTruthy();
   });
 });

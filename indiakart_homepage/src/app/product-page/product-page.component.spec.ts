@@ -23,7 +23,6 @@ const mockCartItem: CartItem = {
   dateAdded: new Date()
 };
 
-// Mock data for OrderItem
 const mockOrderItem: OrderItem = {
   id: 1,
   userId: 1,
@@ -33,8 +32,6 @@ const mockOrderItem: OrderItem = {
   cost: 50,
   dateAdded: new Date()
 };
-
-// Mock data for ProductDetails
 
 describe('ProductPageComponent', () => {
   let component: ProductPageComponent;
@@ -85,9 +82,9 @@ describe('ProductPageComponent', () => {
     fixture.detectChanges();
   
     // Assertions
-    expect(mockShoppingService.getImg).toHaveBeenCalledWith(1); // Simulated 'id' parameter
-    expect(mockShoppingService.getProductById).toHaveBeenCalledWith(1); // Simulated 'id' parameter
+    expect(mockShoppingService.getImg).toHaveBeenCalledWith(1); 
+    expect(mockShoppingService.getProductById).toHaveBeenCalledWith(1); 
     expect(mockShoppingService.getCartItems).toHaveBeenCalled();
-    expect(component.cartItems).toEqual(jasmine.arrayContaining(mockCartItems)); // Use jasmine.arrayContaining() for array comparison
+    expect(component.cartItems).toEqual(jasmine.arrayContaining(mockCartItems)); 
   });
 });

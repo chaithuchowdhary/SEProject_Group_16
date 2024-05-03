@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RetailerSignupComponent } from './retailer-signup.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('RetailerSignupComponent', () => {
   let component: RetailerSignupComponent;
@@ -8,7 +9,8 @@ describe('RetailerSignupComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RetailerSignupComponent ]
+      declarations: [ RetailerSignupComponent ],
+      imports : [HttpClientModule]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('RetailerSignupComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('RetailerSignupComponent created after redirected to retailersignup', () => {
     expect(component).toBeTruthy();
   });
 });
