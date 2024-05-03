@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 // import { Product } from '../Models/Product';
 // import { OnlineShoppingService } from '../services/ProductCategory/productcat.service';
 import { ShoppingService } from '../shopping.service';
+import { title } from 'process';
 
 @Component({
   selector: 'app-carousel',
@@ -19,14 +20,14 @@ export class CarouselComponent implements OnInit {
 
   
   images = [
-    {img:"https://geekculture.co/wp-content/uploads/2021/09/iphone-13-pro-max-.jpg",
-    title:"Apple",
-    description:"Grab the best deals on Apple products"},
-    {img:"https://www.xda-developers.com/files/2020/02/03.-Galaxy-Watch-Active_Watchfaces.gif",
-    title:"Samsung Galaxy Watch",
-    description:"Grab the best deals on Samsung Galaxy Watch products"},
-    {img:"https://img.global.news.samsung.com/br/wp-content/uploads/2021/03/Tab-_-e1617024107741.gif"},
-    {img:"https://decoding.com.au/wp-content/uploads/2021/11/Samsung-Galaxy-S22-Plus-Ultra-Camera-Battery-Specs-Price-and-Release-Date.png"},
+    {img:"https://www.instacart.com/company/wp-content/uploads/2023/08/grocery-delivery-to-hotel-hero.webp",
+    title:"Groceries",
+    description:"Grab the best deals on Groceries"},
+    {img:"https://www.hsph.harvard.edu/nutritionsource/wp-content/uploads/sites/30/2012/09/vegetables-and-fruits-farmers-market.jpg",
+    title:"Fruits and Veggies",
+    description:"Healthy Fruits and vegetables"},
+    {img:"https://assets3.thrillist.com/v1/image/3014507/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70"},
+    {img:"https://www.quicklly.com/upload_images/blog/1629445694-find-the-best-online-indian-grocery-store-in-manhattan-ny.jpeg",title:"Spices"},
     {img:"https://qph.fs.quoracdn.net/main-qimg-d9a06e64c69f7a8e908f8c190ce99b15"},
     {img:"https://i-raovat.vnecdn.net/2021/06/03/3c34798f_1622713520.png?w=1280&h=768&q=100&dpr=1&rt=auto&g=no&s=ulIeidLPoEyaZshmWzTZYw",
     title:"LG Smart TV",
