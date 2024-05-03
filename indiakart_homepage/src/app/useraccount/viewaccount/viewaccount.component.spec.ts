@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { ViewaccountComponent } from './viewaccount.component';
 
 describe('ViewaccountComponent', () => {
@@ -8,7 +8,8 @@ describe('ViewaccountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewaccountComponent ]
+      declarations: [ ViewaccountComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
 
