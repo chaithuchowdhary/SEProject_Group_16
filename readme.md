@@ -1,5 +1,7 @@
 [![Build and deploy IndiaKart app to Azure Web App](https://github.com/chaithuchowdhary/SEProject_Group_16/actions/workflows/main_indiakart.yml/badge.svg)](https://github.com/chaithuchowdhary/SEProject_Group_16/actions/workflows/main_indiakart.yml)
 
+[![Automated Testing Framework (Karma and Jasmine Frameworks)](https://github.com/chaithuchowdhary/SEProject_Group_16/actions/workflows/main_indiakartdev.yml/badge.svg)](https://github.com/chaithuchowdhary/SEProject_Group_16/actions/workflows/main_indiakartdev.yml)
+
 ## Setting up Angular App and ASP.NET Backend in a Single Repository
 
 1. **Clone the Repository:** using git clone cmd ```git clone <repo url> ```
