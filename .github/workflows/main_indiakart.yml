@@ -31,7 +31,9 @@ jobs:
           cd indiakart_homepage
           npm install
           npm run build --if-present
-          npx ng test --no-watch --no-progress --browsers=ChromeHeadless
+          
+      - name : Testing
+        run : npx ng test --no-watch --no-progress --browsers=ChromeHeadless 
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
