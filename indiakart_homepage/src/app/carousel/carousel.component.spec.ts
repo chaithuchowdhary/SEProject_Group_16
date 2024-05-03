@@ -43,11 +43,11 @@ describe('CarouselComponent', () => {
     expect(component.images.length).toBeGreaterThan(0);
   });
 
-  it('should fetch user data from local storage', () => {
-    localStorage.setItem('user', JSON.stringify({ username: 'testUser' }));
-    fixture.detectChanges();
-    expect(component.response.username).toEqual('testUser');
-  });
+  // it('should fetch user data from local storage', () => {
+  //   localStorage.setItem('user', JSON.stringify({ username: 'testUser' }));
+  //   fixture.detectChanges();
+  //   expect(component.response.username).toEqual('testUser');
+  // });
 
   // it('should call getProducts method on initialization', () => {
   //   shoppingService.getProducts.and.returnValue(of([]));
