@@ -20,7 +20,7 @@
 5. **Run the Backend:**
 
 6. **Set Up the Angular App:**
-- Ensure Node.js and npm are installed.
+- Ensure Node.js and npm are installed properly.
 - Navigate to the frontend directory. ``` cd indiakart_homepage ```
 - run the below cmd in terminal to setup and run in your local system
   ```
